@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Logic Flag</title>
+    <script>
+        function getFlag() {
+            let encoded = [70, 76, 65, 71, 123, 102, 117, 110, 99, 116, 105, 111, 110, 125]; // ASCII values for "FLAG{function}"
+            let flag = String.fromCharCode(...encoded);
+            console.log("Flag: " + flag);
+        }
+    </script>
+</head>
+<body onload="getFlag()">
+    <h1>Can you extract the flag?</h1>
+</body>
+</html>

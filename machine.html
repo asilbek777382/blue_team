@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lakshya CTF</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <script src="js/chart.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="navbar-dark text-white">
+        <div class="container">
+            <nav class="navbar px-0 py-0 navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="pl-md-0 p-3 text-decoration-none text-light">
+                            <h3 class="bold"><span class="color_danger">LAKSHYA</span><span class="color_white">CTF</span></h3>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="p-3 text-decoration-none text-light bold">Home</a>
+                        <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
+                        <a href="hackerboard.html" class="p-3 text-decoration-none text-light bold">Hackerboard</a>
+                        <a href="quests.html" class="p-3 text-decoration-none text-white bold">Challenges</a>
+                        <a href="#" class="p-3 text-decoration-none text-light bold">Logout</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="jumbotron bg-transparent mb-0 pt-0 radius-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <h1 class="display-1 bold color_white content__title">HEADACHE<span class="vim-caret">&nbsp;</span></h1>
+                </div>
+            </div>
+            <h4>Machine info</h4>
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="card border-primary mb-3 text-center">
+                            <div class="card-body">
+                                <h4>Machine IP: 107.0.0.1</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card border-primary mb-3 text-center">
+                            <div class="card-body">
+                                <h4>Prise: Key to Linuxmachine</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card border-primary mb-3 text-center">
+                            <div class="card-body machine_page justify-content-center" style="display: inline-flex;">
+                                <h6 class="solvers"> &nbsp;<span class="color_danger">Difficulty:</span></h6>
+                                <div class="pl-2"><canvas style="width:80px;height:15px" id="machine_id_1_chart"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="card border-primary mb-3 text-center">
+                            <div class="card-body">
+                                <canvas id="machineChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card border-primary mb-3 text-center">
+                        <div class="card-body">
+                            <h4>Rate the challenge</h4>
+                            <div class="row input-group mt-3 justify-content-center">
+                                <div class="input-group mt-3 col-md-6">
+                                    <input type="text" id="flagInput" class="form-control" placeholder="Enter Flag" aria-label="Enter Flag" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button id="submit_p1" class="btn btn-outline-secondary" type="button">Go!</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="result" class="mt-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+(function(){
+    window.onload=function(){console.log("Flag in : lags.html")};
+    var config={type:'radar',data:{labels:['Enumeration','CTF-Like','Custom Exploration','Real-life','CVE'],datasets:[{label:'Problem Setter\'s Ratings',backgroundColor:"#ff000054",borderColor:'red',pointBackgroundColor:'red',data:[3,2,1,5,3]}]},options:{legend:{display:false},scale:{ticks:{display:false},gridLines:{color:"#FFF"}}}};
+    window.myRadar=new Chart(document.getElementById('machineChart'),config);
+    var ctx=document.getElementById('machine_id_1_chart').getContext('2d');
+    window.myBar=new Chart(ctx,{type:'bar',data:{labels:['Easy1','Easy2','Medium3','Hard4','Hard5'],datasets:[{label:'Dataset 1',backgroundColor:['#17b06b','#17b06b','#ffce56','#ef121b','#ef121b'],borderColor:['#17b06b','#17b06b','#ffce56','#ef121b','#ef121b'],borderWidth:1,data:[11,2,13,41,15,0]}]},options:{tooltips:{enabled:false},responsive:false,legend:{display:false},scales:{yAxes:[{display:false}],xAxes:[{display:false}]}}});
+    document.getElementById("submit_p1").onclick=function(){var inputFlag=document.getElementById("flagInput").value;var resultDiv=document.getElementById("result");if(inputFlag==="Blue(you_have_find_the_flag_"){resultDiv.innerHTML='<div class="alert alert-success" role="alert">To‘g‘ri topdingiz!</div>'}else{resultDiv.innerHTML='<div class="alert alert-danger" role="alert">Xato!</div>'}};
+})();
+
+        </script>
+
+        <!-- Optional JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>
