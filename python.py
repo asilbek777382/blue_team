@@ -148,7 +148,7 @@ HTTP/1.1 200 OK
     <div class="console-text">Preparing Hack Tools... Establishing Connection...</div>
 
     <!-- START HACK Button -->
-    <a href="https://grandprixheaven-web.2024.ctfcompetition.com/" target="_blank" class="hack-button">START HACK</a>
+    <a href="https://asilbek777382.github.io/blue_team/quests.html" target="_blank" class="hack-button">START HACK</a>
 
     <footer>
         &copy; 2024 - Powered by <a>BLUE TEAM</a>
