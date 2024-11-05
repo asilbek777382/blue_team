@@ -100,32 +100,15 @@
             </div>
         </div>
 
-    <script>
+<script>
 (function(){
-    window.onload=function(){
-        console.log("Flag in : 'lags.html' starts with 'UW1' ends with 'V=='");
-    };
-
+    window.onload=function(){console.log("Flag in : 'lags.html' starts with 'UW1' ends with 'V=='")};
     var config={type:'radar',data:{labels:['Enumeration','CTF-Like','Custom Exploration','Real-life','CVE'],datasets:[{label:'Problem Setter\'s Ratings',backgroundColor:"#ff000054",borderColor:'red',pointBackgroundColor:'red',data:[3,2,1,5,3]}]},options:{legend:{display:false},scale:{ticks:{display:false},gridLines:{color:"#FFF"}}}};
     window.myRadar=new Chart(document.getElementById('machineChart'),config);
     var ctx=document.getElementById('machine_id_1_chart').getContext('2d');
     window.myBar=new Chart(ctx,{type:'bar',data:{labels:['Easy1','Easy2','Medium3','Hard4','Hard5'],datasets:[{label:'Dataset 1',backgroundColor:['#17b06b','#17b06b','#ffce56','#ef121b','#ef121b'],borderColor:['#17b06b','#17b06b','#ffce56','#ef121b','#ef121b'],borderWidth:1,data:[11,2,13,41,15,0]}]},options:{tooltips:{enabled:false},responsive:false,legend:{display:false},scales:{yAxes:[{display:false}],xAxes:[{display:false}]}}});
-
-    document.getElementById("submit_p1").onclick=function(){
-        var inputFlag=document.getElementById("flagInput").value;
-        var resultDiv=document.getElementById("result");
-        
-        // Shifrlangan parol
-        var correctFlag = atob('Qmx1ZSh5b3VfaGF2ZV9maW5kX3RoZV9mbGFnXw=='); // "Blue(you_have_find_the_flag_" ning base64 formatdagi shifrlanishi
-        
-        if(inputFlag === correctFlag){
-            resultDiv.innerHTML='<div class="alert alert-success" role="alert">To‘g‘ri topdingiz!</div>';
-        } else {
-            resultDiv.innerHTML='<div class="alert alert-danger" role="alert">Xato!</div>';
-        }
-    };
+    document.getElementById("submit_p1").onclick=function(){var inputFlag=document.getElementById("flagInput").value;var resultDiv=document.getElementById("result");if(inputFlag==="Blue(you_have_find_the_flag_"){resultDiv.innerHTML='<div class="alert alert-success" role="alert">To‘g‘ri topdingiz!</div>'}else{resultDiv.innerHTML='<div class="alert alert-danger" role="alert">Xato!</div>'}};
 })();
-</script>
 
 
 
